@@ -5,7 +5,10 @@ usage: "/yaml-workflow {problem or task} - plan before any code"
 ---
 directives:
   - read problem or task from input
-  - output a terse dense yaml plan only; no prose; no code yet
+  - output a terse dense yaml plan in plans/ dir following output_naming; no code yet
+  - output_naming:
+    - triage: "plans/triage.workflow.yaml"
+    -per_task: "{slugified-task-id}.workflow.yaml"
   - for coding problems: use coding_skeleton
   - for triage/planning tasks: use triage_skeleton
   - pick skeleton based on input type; never mix
