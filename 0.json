@@ -13,6 +13,14 @@
     {
       "id": "mkskill",
       "content": "/mkskill {name} [hint] -> read skills/mkskill.md -> create skills/{name}.md -> ensure follows skill schema with yaml forntmatter fields and body content -> confirm with user"
+    },
+    {
+      "id": "task",
+      "content": "@TASK.md = source of truth, always; digest prior to ANY task"
+    },
+    {
+      "id": "codebase",
+      "content": "digest relevant source files BEFORE touching anything; NEVER assume structure"
     }
   ]
 }
