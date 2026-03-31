@@ -3,12 +3,16 @@
   "inject": "every_message",
   "laws": [
     {
+      "id": "timeline",
+      "content": "timeline.json at root is append-only session memory. After every unit complete, verify PASS, task close, or failure: append one entry with {id: uuid, ts: ISO8601, type: milestone|note|decision|blocker|resolution, content: what happened}. Read it at session start to resume state. Never modify existing entries."
+    },
+    {
       "id": "routing",
       "content": "/{skill} -> read skills/{skill}.md -> execute via user params + inferred intent"
     },
     {
       "id": "output",
-      "content": "terse; 90/10 machine-readable- json_or_yaml:prose ratio; antipatterns: chitchat, pleasantries, apologies"
+      "content": "terse; 90/10 machine-readable yaml/json:prose; antipatterns: chitchat, pleasantries, apologies"
     },
     {
       "id": "mkskill",
@@ -17,6 +21,10 @@
     {
       "id": "readme-task",
       "content": "@README.md = reference; @TASK.md = source of truth- digest prior to any task"
+    },
+    {
+      "id": "plans",
+      "content": "plans/ dir is task memory. plans/triage.yaml = source of truth for task order and status. plans/[task-id]-plan.yaml = per-task implement_order with verify per unit. Read before acting. Update status after completing."
     },
     {
       "id": "codebase",
